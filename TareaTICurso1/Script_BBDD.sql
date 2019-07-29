@@ -39,7 +39,7 @@ CREATE TABLE [dbo].[DCCarro](
 	[FinanciadoPor] [int] NOT NULL,
 	[Marca] [nvarchar](50) NULL,
 	[Modelo] [nvarchar](50) NULL,
-	[Año] [int] NULL,
+	[AÃ±o] [int] NULL,
 	[UsuarioInserto] [nvarchar](50) NULL,
 	[FechaInserto] [datetime] NULL,
 	[UsuarioModifico] [nvarchar](50) NULL,
@@ -55,4 +55,9 @@ ALTER TABLE [dbo].[DCCarro] CHECK CONSTRAINT [FK_DCCarro_DCBanco]
 GO
 
 
+<<<<<<< HEAD
 -- HOLA CECIBEL
+=======
+-- Hola Cecibel
+
+>>>>>>> cc0f89216b8c947f08259f59fc73044b1601f9fb
