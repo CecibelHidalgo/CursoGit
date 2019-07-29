@@ -39,7 +39,7 @@ CREATE TABLE [dbo].[DCCarro](
 	[FinanciadoPor] [int] NOT NULL,
 	[Marca] [nvarchar](50) NULL,
 	[Modelo] [nvarchar](50) NULL,
-	[Año] [int] NULL,
+	[AÃ±o] [int] NULL,
 	[UsuarioInserto] [nvarchar](50) NULL,
 	[FechaInserto] [datetime] NULL,
 	[UsuarioModifico] [nvarchar](50) NULL,
@@ -54,4 +54,6 @@ GO
 ALTER TABLE [dbo].[DCCarro] CHECK CONSTRAINT [FK_DCCarro_DCBanco]
 GO
 
+
+-- Hola Cecibel
 
