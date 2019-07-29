@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f865aa5e0f0444f0bc46a19724d875e5" Name="Diagram1">
+        <EntityTypeShape EntityType="dbPruebaCursoModel.ACCategory" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbPruebaCursoModel.ACJob" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbPruebaCursoModel.ARDireccion" Width="1.5" PointX="10" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbPruebaCursoModel.ARUsuario" Width="1.5" PointX="7.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbPruebaCursoModel.DCBanco" Width="1.5" PointX="2.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbPruebaCursoModel.ECAPPOINTMENT" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbPruebaCursoModel.ECCUSTOMER" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbPruebaCursoModel.JLPCTPay" Width="1.5" PointX="10" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbPruebaCursoModel.JLPCTStudentMaster" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbPruebaCursoModel.PCTClaves" Width="1.5" PointX="5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbPruebaCursoModel.PCTMovimiento" Width="1.5" PointX="2.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbPruebaCursoModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbPruebaCursoModel.DCCarro" Width="1.5" PointX="5" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="dbPruebaCursoModel.FK_ACJob_ACJob" ManuallyRouted="false" />
+        <AssociationConnector Association="dbPruebaCursoModel.FK_ARUsuario_ARDireccion" ManuallyRouted="false" />
+        <AssociationConnector Association="dbPruebaCursoModel.FK_DCCarro_DCBanco" ManuallyRouted="false" />
+        <AssociationConnector Association="dbPruebaCursoModel.FK_ECAPPOINTMENT_ECCUSTOMER" ManuallyRouted="false" />
+        <AssociationConnector Association="dbPruebaCursoModel.FK__JLPCTPay__studen__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="dbPruebaCursoModel.FK_PCTClaves_PCTMovimiento" ManuallyRouted="false" />
+        <AssociationConnector Association="dbPruebaCursoModel.FK_ACJob_ACCategory" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

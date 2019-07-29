@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbPruebaCursoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ACCategory">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="35" FixedLength="true" Unicode="true" />
+    <Property Name="Usuario_Inserto" Type="String" MaxLength="35" FixedLength="true" Unicode="true" />
+    <Property Name="Fecha_Inserto" Type="DateTime" Precision="3" />
+    <Property Name="Usuario_Modifico" Type="String" MaxLength="35" FixedLength="true" Unicode="true" />
+    <Property Name="Fecha_Modifico" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ACJob" Relationship="dbPruebaCursoModel.FK_ACJob_ACCategory" FromRole="ACCategory" ToRole="ACJob" />
+  </EntityType>
+  <EntityType Name="ACJob">
+    <Key>
+      <PropertyRef Name="IdJob" />
+    </Key>
+    <Property Name="IdJob" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="35" FixedLength="true" Unicode="true" />
+    <Property Name="Company" Type="String" MaxLength="35" FixedLength="true" Unicode="true" />
+    <Property Name="Logo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Position" Type="String" MaxLength="35" FixedLength="true" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="35" FixedLength="true" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="35" FixedLength="true" Unicode="true" />
+    <Property Name="How_to_apply" Type="String" MaxLength="35" FixedLength="true" Unicode="true" />
+    <Property Name="Token" Type="String" MaxLength="35" FixedLength="true" Unicode="true" />
+    <Property Name="Is_public" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="Is_validated" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="Expires_at" Type="DateTime" Precision="0" />
+    <Property Name="Create_at" Type="DateTime" Precision="0" />
+    <Property Name="Update_at" Type="DateTime" Precision="0" />
+    <Property Name="IdCategoria" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ACJob1" Relationship="Self.FK_ACJob_ACJob" FromRole="ACJob" ToRole="ACJob1" />
+    <NavigationProperty Name="ACJob2" Relationship="Self.FK_ACJob_ACJob" FromRole="ACJob1" ToRole="ACJob" />
+    <NavigationProperty Name="ACCategory" Relationship="dbPruebaCursoModel.FK_ACJob_ACCategory" FromRole="ACJob" ToRole="ACCategory" />
+  </EntityType>
+  <EntityType Name="ARDireccion">
+    <Key>
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="AddressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Street" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ARUsuario" Relationship="Self.FK_ARUsuario_ARDireccion" FromRole="ARDireccion" ToRole="ARUsuario" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ARUsuario">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ARDireccion" Relationship="Self.FK_ARUsuario_ARDireccion" FromRole="ARUsuario" ToRole="ARDireccion" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="DCBanco">
+    <Key>
+      <PropertyRef Name="IdBanco" />
+    </Key>
+    <Property Name="IdBanco" Type="Int32" Nullable="false" />
+    <Property Name="TasaInteres" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Cantidad" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="DCCarro" Relationship="Self.FK_DCCarro_DCBanco" FromRole="DCBanco" ToRole="DCCarro" />
+    <Property Name="UsuarioInserto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FechaInserto" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ECAPPOINTMENT">
+    <Key>
+      <PropertyRef Name="AppointmentID" />
+    </Key>
+    <Property Name="AppointmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppointmentDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AppointmentTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Eliminado" Type="Boolean" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FechaCreo" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+    <Property Name="CustomerID" Type="Int32" />
+    <NavigationProperty Name="ECCUSTOMER" Relationship="Self.FK_ECAPPOINTMENT_ECCUSTOMER" FromRole="ECAPPOINTMENT" ToRole="ECCUSTOMER" />
+  </EntityType>
+  <EntityType Name="ECCUSTOMER">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Eliminado" Type="Boolean" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FechaCreo" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ECAPPOINTMENT" Relationship="Self.FK_ECAPPOINTMENT_ECCUSTOMER" FromRole="ECCUSTOMER" ToRole="ECAPPOINTMENT" />
+  </EntityType>
+  <EntityType Name="JLPCTPay">
+    <Key>
+      <PropertyRef Name="receiptNumber" />
+    </Key>
+    <Property Name="receiptNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="studentNumber" Type="Int32" Nullable="false" />
+    <Property Name="paymentDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="amount" Type="Double" Nullable="false" />
+    <NavigationProperty Name="JLPCTStudentMaster" Relationship="Self.FK__JLPCTPay__studen__4CA06362" FromRole="JLPCTPay" ToRole="JLPCTStudentMaster" />
+  </EntityType>
+  <EntityType Name="JLPCTStudentMaster">
+    <Key>
+      <PropertyRef Name="studentNumber" />
+    </Key>
+    <Property Name="studentNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="lastName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="programmeCode" Type="Int32" Nullable="false" />
+    <Property Name="registrationDate" Type="DateTime" Precision="0" />
+    <Property Name="adress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="phoneNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="dateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="notes" Type="Int32" />
+    <Property Name="fYCF" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="Int32" />
+    <NavigationProperty Name="JLPCTPay" Relationship="Self.FK__JLPCTPay__studen__4CA06362" FromRole="JLPCTStudentMaster" ToRole="JLPCTPay" />
+  </EntityType>
+  <EntityType Name="PCTClaves">
+    <Key>
+      <PropertyRef Name="CodigoClave" />
+    </Key>
+    <Property Name="CodigoClave" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <Property Name="Eliminado" Type="Boolean" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FechaCreo" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+    <Property Name="CodigoMovimiento" Type="Int32" />
+    <NavigationProperty Name="PCTMovimiento" Relationship="Self.FK_PCTClaves_PCTMovimiento" FromRole="PCTClaves" ToRole="PCTMovimiento" />
+  </EntityType>
+  <EntityType Name="PCTMovimiento">
+    <Key>
+      <PropertyRef Name="CodigoMovimiento" />
+    </Key>
+    <Property Name="CodigoMovimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PCTClaves" Relationship="Self.FK_PCTClaves_PCTMovimiento" FromRole="PCTMovimiento" ToRole="PCTClaves" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="DCCarro">
+    <Key>
+      <PropertyRef Name="FinanciadoPor" />
+    </Key>
+    <Property Name="FinanciadoPor" Type="Int32" Nullable="false" />
+    <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Año" Type="Int32" />
+    <NavigationProperty Name="DCBanco" Relationship="Self.FK_DCCarro_DCBanco" FromRole="DCCarro" ToRole="DCBanco" />
+    <Property Name="UsuarioInserto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FechaInserto" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_ACJob_ACJob">
+    <End Role="ACJob" Type="Self.ACJob" Multiplicity="1" />
+    <End Role="ACJob1" Type="Self.ACJob" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ACJob">
+        <PropertyRef Name="IdJob" />
+      </Principal>
+      <Dependent Role="ACJob1">
+        <PropertyRef Name="IdJob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARUsuario_ARDireccion">
+    <End Role="ARUsuario" Type="Self.ARUsuario" Multiplicity="1" />
+    <End Role="ARDireccion" Type="Self.ARDireccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARUsuario">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ARDireccion">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DCCarro_DCBanco">
+    <End Role="DCBanco" Type="Self.DCBanco" Multiplicity="1" />
+    <End Role="DCCarro" Type="Self.DCCarro" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DCBanco">
+        <PropertyRef Name="IdBanco" />
+      </Principal>
+      <Dependent Role="DCCarro">
+        <PropertyRef Name="FinanciadoPor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ECAPPOINTMENT_ECCUSTOMER">
+    <End Role="ECCUSTOMER" Type="Self.ECCUSTOMER" Multiplicity="0..1" />
+    <End Role="ECAPPOINTMENT" Type="Self.ECAPPOINTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ECCUSTOMER">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="ECAPPOINTMENT">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JLPCTPay__studen__4CA06362">
+    <End Role="JLPCTStudentMaster" Type="Self.JLPCTStudentMaster" Multiplicity="1" />
+    <End Role="JLPCTPay" Type="Self.JLPCTPay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JLPCTStudentMaster">
+        <PropertyRef Name="studentNumber" />
+      </Principal>
+      <Dependent Role="JLPCTPay">
+        <PropertyRef Name="studentNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PCTClaves_PCTMovimiento">
+    <End Role="PCTMovimiento" Type="Self.PCTMovimiento" Multiplicity="0..1" />
+    <End Role="PCTClaves" Type="Self.PCTClaves" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PCTMovimiento">
+        <PropertyRef Name="CodigoMovimiento" />
+      </Principal>
+      <Dependent Role="PCTClaves">
+        <PropertyRef Name="CodigoMovimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbPruebaCursoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACCategory" EntityType="Self.ACCategory" />
+    <EntitySet Name="ACJob" EntityType="Self.ACJob" />
+    <EntitySet Name="ARDireccion" EntityType="Self.ARDireccion" />
+    <EntitySet Name="ARUsuario" EntityType="Self.ARUsuario" />
+    <EntitySet Name="DCBanco" EntityType="Self.DCBanco" />
+    <EntitySet Name="ECAPPOINTMENT" EntityType="Self.ECAPPOINTMENT" />
+    <EntitySet Name="ECCUSTOMER" EntityType="Self.ECCUSTOMER" />
+    <EntitySet Name="JLPCTPay" EntityType="Self.JLPCTPay" />
+    <EntitySet Name="JLPCTStudentMaster" EntityType="Self.JLPCTStudentMaster" />
+    <EntitySet Name="PCTClaves" EntityType="Self.PCTClaves" />
+    <EntitySet Name="PCTMovimiento" EntityType="Self.PCTMovimiento" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="DCCarro" EntityType="Self.DCCarro" />
+    <AssociationSet Name="FK_ACJob_ACJob" Association="Self.FK_ACJob_ACJob">
+      <End Role="ACJob" EntitySet="ACJob" />
+      <End Role="ACJob1" EntitySet="ACJob" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARUsuario_ARDireccion" Association="Self.FK_ARUsuario_ARDireccion">
+      <End Role="ARUsuario" EntitySet="ARUsuario" />
+      <End Role="ARDireccion" EntitySet="ARDireccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DCCarro_DCBanco" Association="Self.FK_DCCarro_DCBanco">
+      <End Role="DCBanco" EntitySet="DCBanco" />
+      <End Role="DCCarro" EntitySet="DCCarro" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ECAPPOINTMENT_ECCUSTOMER" Association="Self.FK_ECAPPOINTMENT_ECCUSTOMER">
+      <End Role="ECCUSTOMER" EntitySet="ECCUSTOMER" />
+      <End Role="ECAPPOINTMENT" EntitySet="ECAPPOINTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JLPCTPay__studen__4CA06362" Association="Self.FK__JLPCTPay__studen__4CA06362">
+      <End Role="JLPCTStudentMaster" EntitySet="JLPCTStudentMaster" />
+      <End Role="JLPCTPay" EntitySet="JLPCTPay" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PCTClaves_PCTMovimiento" Association="Self.FK_PCTClaves_PCTMovimiento">
+      <End Role="PCTMovimiento" EntitySet="PCTMovimiento" />
+      <End Role="PCTClaves" EntitySet="PCTClaves" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(dbPruebaCursoModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(dbPruebaCursoModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <AssociationSet Name="FK_ACJob_ACCategory" Association="dbPruebaCursoModel.FK_ACJob_ACCategory">
+      <End Role="ACCategory" EntitySet="ACCategory" />
+      <End Role="ACJob" EntitySet="ACJob" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <Association Name="FK_ACJob_ACCategory">
+    <End Type="dbPruebaCursoModel.ACCategory" Role="ACCategory" Multiplicity="1" />
+    <End Type="dbPruebaCursoModel.ACJob" Role="ACJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACCategory">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="ACJob">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

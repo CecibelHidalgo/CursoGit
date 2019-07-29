@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbPruebaCursoModelStoreContainer" CdmEntityContainer="dbPruebaCursoEntities">
+    <EntitySetMapping Name="ACCategory">
+      <EntityTypeMapping TypeName="dbPruebaCursoModel.ACCategory">
+        <MappingFragment StoreEntitySet="ACCategory">
+          <ScalarProperty Name="Fecha_Modifico" ColumnName="Fecha_Modifico" />
+          <ScalarProperty Name="Usuario_Modifico" ColumnName="Usuario_Modifico" />
+          <ScalarProperty Name="Fecha_Inserto" ColumnName="Fecha_Inserto" />
+          <ScalarProperty Name="Usuario_Inserto" ColumnName="Usuario_Inserto" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACJob">
+      <EntityTypeMapping TypeName="dbPruebaCursoModel.ACJob">
+        <MappingFragment StoreEntitySet="ACJob">
+          <ScalarProperty Name="IdJob" ColumnName="IdJob" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="How_to_apply" ColumnName="How_to_apply" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="Is_public" ColumnName="Is_public" />
+          <ScalarProperty Name="Is_validated" ColumnName="Is_validated" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Expires_at" ColumnName="Expires_at" />
+          <ScalarProperty Name="Create_at" ColumnName="Create_at" />
+          <ScalarProperty Name="Update_at" ColumnName="Update_at" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ARDireccion">
+      <EntityTypeMapping TypeName="dbPruebaCursoModel.ARDireccion">
+        <MappingFragment StoreEntitySet="ARDireccion">
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ARUsuario">
+      <EntityTypeMapping TypeName="dbPruebaCursoModel.ARUsuario">
+        <MappingFragment StoreEntitySet="ARUsuario">
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DCBanco">
+      <EntityTypeMapping TypeName="dbPruebaCursoModel.DCBanco">
+        <MappingFragment StoreEntitySet="DCBanco">
+          <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+          <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+          <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+          <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+          <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
+          <ScalarProperty Name="TasaInteres" ColumnName="TasaInteres" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ECAPPOINTMENT">
+      <EntityTypeMapping TypeName="dbPruebaCursoModel.ECAPPOINTMENT">
+        <MappingFragment StoreEntitySet="ECAPPOINTMENT">
+          <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="AppointmentTime" ColumnName="AppointmentTime" />
+          <ScalarProperty Name="Eliminado" ColumnName="Eliminado" />
+          <ScalarProperty Name="UsuarioCreo" ColumnName="UsuarioCreo" />
+          <ScalarProperty Name="FechaCreo" ColumnName="FechaCreo" />
+          <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+          <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ECCUSTOMER">
+      <EntityTypeMapping TypeName="dbPruebaCursoModel.ECCUSTOMER">
+        <MappingFragment StoreEntitySet="ECCUSTOMER">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumer" ColumnName="PhoneNumer" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Eliminado" ColumnName="Eliminado" />
+          <ScalarProperty Name="UsuarioCreo" ColumnName="UsuarioCreo" />
+          <ScalarProperty Name="FechaCreo" ColumnName="FechaCreo" />
+          <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+          <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JLPCTPay">
+      <EntityTypeMapping TypeName="dbPruebaCursoModel.JLPCTPay">
+        <MappingFragment StoreEntitySet="JLPCTPay">
+          <ScalarProperty Name="receiptNumber" ColumnName="receiptNumber" />
+          <ScalarProperty Name="studentNumber" ColumnName="studentNumber" />
+          <ScalarProperty Name="paymentDate" ColumnName="paymentDate" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JLPCTStudentMaster">
+      <EntityTypeMapping TypeName="dbPruebaCursoModel.JLPCTStudentMaster">
+        <MappingFragment StoreEntitySet="JLPCTStudentMaster">
+          <ScalarProperty Name="studentNumber" ColumnName="studentNumber" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="programmeCode" ColumnName="programmeCode" />
+          <ScalarProperty Name="registrationDate" ColumnName="registrationDate" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="phoneNo" ColumnName="phoneNo" />
+          <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="fYCF" ColumnName="fYCF" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCTClaves">
+      <EntityTypeMapping TypeName="dbPruebaCursoModel.PCTClaves">
+        <MappingFragment StoreEntitySet="PCTClaves">
+          <ScalarProperty Name="CodigoClave" ColumnName="CodigoClave" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Eliminado" ColumnName="Eliminado" />
+          <ScalarProperty Name="UsuarioCreo" ColumnName="UsuarioCreo" />
+          <ScalarProperty Name="FechaCreo" ColumnName="FechaCreo" />
+          <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+          <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+          <ScalarProperty Name="CodigoMovimiento" ColumnName="CodigoMovimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCTMovimiento">
+      <EntityTypeMapping TypeName="dbPruebaCursoModel.PCTMovimiento">
+        <MappingFragment StoreEntitySet="PCTMovimiento">
+          <ScalarProperty Name="CodigoMovimiento" ColumnName="CodigoMovimiento" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="dbPruebaCursoModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DCCarro">
+      <EntityTypeMapping TypeName="dbPruebaCursoModel.DCCarro">
+        <MappingFragment StoreEntitySet="DCCarro">
+          <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+          <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+          <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+          <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+          <ScalarProperty Name="FinanciadoPor" ColumnName="FinanciadoPor" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Año" ColumnName="Año" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="dbPruebaCursoModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="dbPruebaCursoModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="dbPruebaCursoModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="dbPruebaCursoModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbPruebaCursoModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="dbPruebaCursoModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbPruebaCursoModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="dbPruebaCursoModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="dbPruebaCursoModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

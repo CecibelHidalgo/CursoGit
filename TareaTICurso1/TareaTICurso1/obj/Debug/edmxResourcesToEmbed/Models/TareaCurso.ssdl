@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbPruebaCursoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACCategory">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="35" />
+    <Property Name="Usuario_Inserto" Type="nchar" MaxLength="35" />
+    <Property Name="Fecha_Inserto" Type="datetime" />
+    <Property Name="Usuario_Modifico" Type="nchar" MaxLength="35" />
+    <Property Name="Fecha_Modifico" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ACJob">
+    <Key>
+      <PropertyRef Name="IdJob" />
+    </Key>
+    <Property Name="IdJob" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nchar" MaxLength="35" />
+    <Property Name="Company" Type="nchar" MaxLength="35" />
+    <Property Name="Logo" Type="nchar" MaxLength="10" />
+    <Property Name="Url" Type="nchar" MaxLength="50" />
+    <Property Name="Position" Type="nchar" MaxLength="35" />
+    <Property Name="Location" Type="nchar" MaxLength="35" />
+    <Property Name="Description" Type="nchar" MaxLength="35" />
+    <Property Name="How_to_apply" Type="nchar" MaxLength="35" />
+    <Property Name="Token" Type="nchar" MaxLength="35" />
+    <Property Name="Is_public" Type="nchar" MaxLength="25" />
+    <Property Name="Is_validated" Type="nchar" MaxLength="25" />
+    <Property Name="email" Type="nchar" MaxLength="25" />
+    <Property Name="Expires_at" Type="date" />
+    <Property Name="Create_at" Type="date" />
+    <Property Name="Update_at" Type="date" />
+    <Property Name="IdCategoria" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ARDireccion">
+    <Key>
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="AddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Street" Type="varchar" MaxLength="250" />
+    <Property Name="City" Type="varchar" MaxLength="100" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="10" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ARUsuario">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fechaModificacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DCBanco">
+    <Key>
+      <PropertyRef Name="IdBanco" />
+    </Key>
+    <Property Name="IdBanco" Type="int" Nullable="false" />
+    <Property Name="TasaInteres" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Cantidad" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaInserto" Type="datetime" />
+    <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaModifico" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPruebaCurso.dbo.DCCarro' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DCCarro">
+    <Key>
+      <PropertyRef Name="FinanciadoPor" />
+    </Key>
+    <Property Name="FinanciadoPor" Type="int" Nullable="false" />
+    <Property Name="Marca" Type="nvarchar" MaxLength="50" />
+    <Property Name="Modelo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Año" Type="int" />
+    <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaInserto" Type="datetime" />
+    <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaModifico" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ECAPPOINTMENT">
+    <Key>
+      <PropertyRef Name="AppointmentID" />
+    </Key>
+    <Property Name="AppointmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppointmentDate" Type="datetime" Nullable="false" />
+    <Property Name="AppointmentTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Eliminado" Type="bit" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaCreo" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaModifico" Type="datetime" />
+    <Property Name="CustomerID" Type="int" />
+  </EntityType>
+  <EntityType Name="ECCUSTOMER">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhoneNumer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Street" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Eliminado" Type="bit" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaCreo" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaModifico" Type="datetime" />
+  </EntityType>
+  <EntityType Name="JLPCTPay">
+    <Key>
+      <PropertyRef Name="receiptNumber" />
+    </Key>
+    <Property Name="receiptNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="studentNumber" Type="int" Nullable="false" />
+    <Property Name="paymentDate" Type="date" Nullable="false" />
+    <Property Name="amount" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JLPCTStudentMaster">
+    <Key>
+      <PropertyRef Name="studentNumber" />
+    </Key>
+    <Property Name="studentNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="255" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="255" />
+    <Property Name="programmeCode" Type="int" Nullable="false" />
+    <Property Name="registrationDate" Type="date" />
+    <Property Name="adress" Type="nvarchar" MaxLength="255" />
+    <Property Name="city" Type="nvarchar" MaxLength="255" />
+    <Property Name="country" Type="nvarchar" MaxLength="255" />
+    <Property Name="phoneNo" Type="nvarchar" MaxLength="255" />
+    <Property Name="dateOfBirth" Type="date" />
+    <Property Name="notes" Type="int" />
+    <Property Name="fYCF" Type="nvarchar" MaxLength="255" />
+    <Property Name="deleted" Type="int" />
+  </EntityType>
+  <EntityType Name="PCTClaves">
+    <Key>
+      <PropertyRef Name="CodigoClave" />
+    </Key>
+    <Property Name="CodigoClave" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="Eliminado" Type="bit" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaCreo" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaModifico" Type="datetime" />
+    <Property Name="CodigoMovimiento" Type="int" />
+  </EntityType>
+  <EntityType Name="PCTMovimiento">
+    <Key>
+      <PropertyRef Name="CodigoMovimiento" />
+    </Key>
+    <Property Name="CodigoMovimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK__JLPCTPay__studen__4CA06362">
+    <End Role="JLPCTStudentMaster" Type="Self.JLPCTStudentMaster" Multiplicity="1" />
+    <End Role="JLPCTPay" Type="Self.JLPCTPay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JLPCTStudentMaster">
+        <PropertyRef Name="studentNumber" />
+      </Principal>
+      <Dependent Role="JLPCTPay">
+        <PropertyRef Name="studentNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACJob_ACCategory">
+    <End Role="ACCategory" Type="Self.ACCategory" Multiplicity="1" />
+    <End Role="ACJob" Type="Self.ACJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACCategory">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="ACJob">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARUsuario_ARDireccion">
+    <End Role="ARUsuario" Type="Self.ARUsuario" Multiplicity="1" />
+    <End Role="ARDireccion" Type="Self.ARDireccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARUsuario">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ARDireccion">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DCCarro_DCBanco">
+    <End Role="DCBanco" Type="Self.DCBanco" Multiplicity="1" />
+    <End Role="DCCarro" Type="Self.DCCarro" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DCBanco">
+        <PropertyRef Name="IdBanco" />
+      </Principal>
+      <Dependent Role="DCCarro">
+        <PropertyRef Name="FinanciadoPor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ECAPPOINTMENT_ECCUSTOMER">
+    <End Role="ECCUSTOMER" Type="Self.ECCUSTOMER" Multiplicity="0..1" />
+    <End Role="ECAPPOINTMENT" Type="Self.ECAPPOINTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ECCUSTOMER">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="ECAPPOINTMENT">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PCTClaves_PCTMovimiento">
+    <End Role="PCTMovimiento" Type="Self.PCTMovimiento" Multiplicity="0..1" />
+    <End Role="PCTClaves" Type="Self.PCTClaves" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PCTMovimiento">
+        <PropertyRef Name="CodigoMovimiento" />
+      </Principal>
+      <Dependent Role="PCTClaves">
+        <PropertyRef Name="CodigoMovimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="dbPruebaCursoModelStoreContainer">
+    <EntitySet Name="ACCategory" EntityType="Self.ACCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ACJob" EntityType="Self.ACJob" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ARDireccion" EntityType="Self.ARDireccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ARUsuario" EntityType="Self.ARUsuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DCBanco" EntityType="Self.DCBanco" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ECAPPOINTMENT" EntityType="Self.ECAPPOINTMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ECCUSTOMER" EntityType="Self.ECCUSTOMER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JLPCTPay" EntityType="Self.JLPCTPay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JLPCTStudentMaster" EntityType="Self.JLPCTStudentMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PCTClaves" EntityType="Self.PCTClaves" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PCTMovimiento" EntityType="Self.PCTMovimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DCCarro" EntityType="Self.DCCarro" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [DCCarro].[FinanciadoPor] AS [FinanciadoPor], 
+    [DCCarro].[Marca] AS [Marca], 
+    [DCCarro].[Modelo] AS [Modelo], 
+    [DCCarro].[Año] AS [Año], 
+    [DCCarro].[UsuarioInserto] AS [UsuarioInserto], 
+    [DCCarro].[FechaInserto] AS [FechaInserto], 
+    [DCCarro].[UsuarioModifico] AS [UsuarioModifico], 
+    [DCCarro].[FechaModifico] AS [FechaModifico]
+    FROM [dbo].[DCCarro] AS [DCCarro]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__JLPCTPay__studen__4CA06362" Association="Self.FK__JLPCTPay__studen__4CA06362">
+      <End Role="JLPCTStudentMaster" EntitySet="JLPCTStudentMaster" />
+      <End Role="JLPCTPay" EntitySet="JLPCTPay" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACJob_ACCategory" Association="Self.FK_ACJob_ACCategory">
+      <End Role="ACCategory" EntitySet="ACCategory" />
+      <End Role="ACJob" EntitySet="ACJob" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARUsuario_ARDireccion" Association="Self.FK_ARUsuario_ARDireccion">
+      <End Role="ARUsuario" EntitySet="ARUsuario" />
+      <End Role="ARDireccion" EntitySet="ARDireccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DCCarro_DCBanco" Association="Self.FK_DCCarro_DCBanco">
+      <End Role="DCBanco" EntitySet="DCBanco" />
+      <End Role="DCCarro" EntitySet="DCCarro" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ECAPPOINTMENT_ECCUSTOMER" Association="Self.FK_ECAPPOINTMENT_ECCUSTOMER">
+      <End Role="ECCUSTOMER" EntitySet="ECCUSTOMER" />
+      <End Role="ECAPPOINTMENT" EntitySet="ECAPPOINTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PCTClaves_PCTMovimiento" Association="Self.FK_PCTClaves_PCTMovimiento">
+      <End Role="PCTMovimiento" EntitySet="PCTMovimiento" />
+      <End Role="PCTClaves" EntitySet="PCTClaves" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
